@@ -7,7 +7,6 @@ import java.util.concurrent.TimeUnit;
 //import static java.time.Temporal;
 
 
-
 public class TypeSpeed {
 
          public String [] textos = new String [3];
@@ -64,7 +63,12 @@ public class TypeSpeed {
              Duration intervalo = Duration.between(start, end);
              setTime(intervalo.getSeconds());
              setSpeed((time)/(nrPalavras));
-             System.out.println("Voce precisou de "+ getTime()+ "segundos para igitar o texto.");
+             if(!(text.equals(textos[posTexto]))){
+                      System.out.println("Voce cabulou !!!");
+             }
+         else{
+                  System.out.println("Voce precisou de "+ getTime()+ "segundos para igitar o texto.");
+         }
              historico[posHistorico] = getSpeed();
              
              return speed;     
